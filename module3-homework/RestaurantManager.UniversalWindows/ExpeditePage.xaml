@@ -6,10 +6,14 @@
     xmlns:models="using:RestaurantManager.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extensions="using:RestaurantManager.Extensions"
     mc:Ignorable="d">
     <Page.DataContext>
         <models:ExpediteDataManager />
     </Page.DataContext>
+    <Page.Resources>
+        <extensions:BoolToColorConverter x:Key="BoolToColorConverter"/>
+    </Page.Resources>
     <Page.TopAppBar>
         <AppBar>
             <AppBarButton Label="Home" Click="MainPage_Click">
@@ -30,7 +34,8 @@
                 <DataTemplate>
                     <Grid Height="300" Margin="10">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0.55*"/>
+                            <RowDefinition Height="1.3*"/>
+                            <RowDefinition Height="*"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <ItemsControl Grid.Row="0" ItemsSource="{Binding Items}">
@@ -42,14 +47,18 @@
                         </ItemsControl>
                         <StackPanel Background="Gray" Grid.Row="1">
                             <TextBlock FontSize="20" Text="{Binding Table.Description}"/>
-                            <TextBlock/>
                             <TextBlock Margin="5">
                             <Run Text=" Special Notes:"/>
                             <LineBreak/>
                             <Run FontStyle="Italic" Text="{Binding SpecialRequests}"/>
                             </TextBlock>
-                            <Button FontSize="20" HorizontalAlignment="Center" Content="Delete"/>
                         </StackPanel>
+                        <Border Grid.Row="2">
+                            <Border.Background>
+                                <SolidColorBrush Color="{Binding Expedite, Converter={StaticResource BoolToColorConverter}}"/>
+                            </Border.Background>
+                            <Button FontSize="20" HorizontalAlignment="Center" Content="Delete"/>
+                        </Border>
                     </Grid>
                 </DataTemplate>
             </GridView.ItemTemplate>
