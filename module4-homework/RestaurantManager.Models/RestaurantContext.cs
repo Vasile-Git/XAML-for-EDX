@@ -18,7 +18,7 @@ namespace RestaurantManager.Models
         public async Task InitializeContextAsync()
         {
             //DO NOT REMOVE: Simulates network congestion
-            await Task.Delay(TimeSpan.FromSeconds(2.5d));
+            //await Task.Delay(TimeSpan.FromSeconds(2.5d));
 
             this.Tables = new List<Table>
             {
@@ -45,7 +45,7 @@ namespace RestaurantManager.Models
                 new Order { Complete = false, Expedite = true, SpecialRequests = "Allergic to Shellfish", Table = this.Tables.Last(), Items = new List<MenuItem> { this.StandardMenuItems.First() } },
                 new Order { Complete = false, Expedite = false, SpecialRequests = String.Empty, Table = this.Tables.Last(), Items = new List<MenuItem> { this.StandardMenuItems.Last(), this.StandardMenuItems.First() } },
             };
-            
+
         }
     }
 }

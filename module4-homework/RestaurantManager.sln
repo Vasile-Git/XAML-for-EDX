@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.Extensions", "RestaurantManager.Extensions\RestaurantManager.Extensions.csproj", "{B165E776-1DD5-4C9D-9057-71BCEC6CBFAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantManager.ViewModels", "RestaurantManager.ViewModels\RestaurantManager.ViewModels.csproj", "{461C0BB9-99FF-4296-AC14-966CDDACDDE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,22 @@ Global
 		{B165E776-1DD5-4C9D-9057-71BCEC6CBFAA}.Release|x64.Build.0 = Release|x64
 		{B165E776-1DD5-4C9D-9057-71BCEC6CBFAA}.Release|x86.ActiveCfg = Release|x86
 		{B165E776-1DD5-4C9D-9057-71BCEC6CBFAA}.Release|x86.Build.0 = Release|x86
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|ARM.Build.0 = Debug|ARM
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|x64.ActiveCfg = Debug|x64
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|x64.Build.0 = Debug|x64
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|x86.ActiveCfg = Debug|x86
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Debug|x86.Build.0 = Debug|x86
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|ARM.ActiveCfg = Release|ARM
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|ARM.Build.0 = Release|ARM
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|x64.ActiveCfg = Release|x64
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|x64.Build.0 = Release|x64
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|x86.ActiveCfg = Release|x86
+		{461C0BB9-99FF-4296-AC14-966CDDACDDE7}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

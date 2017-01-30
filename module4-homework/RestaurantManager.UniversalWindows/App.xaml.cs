@@ -40,7 +40,7 @@ namespace RestaurantManager.UniversalWindows
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            var task = Task.Delay(2500);
+            var task = Task.Delay(1500);
             task.Wait();
 
             Frame rootFrame = Window.Current.Content as Frame;
