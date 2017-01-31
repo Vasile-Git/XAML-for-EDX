@@ -20,32 +20,27 @@ namespace RestaurantManager.ViewModels
             //_messageService = messageService;
             AddMenuItemCommand = new DelegateCommand(AddMenuItem);
             SubmitOrderCommand = new DelegateCommand(SubmitOrder);
+            this.CurrentlySelectedMenuItems = new ObservableCollection<MenuItem> { };
         }
 
         protected override void OnDataLoaded()
         {
             this.MenuItems = base.Repository.StandardMenuItems;
-
-            this.CurrentlySelectedMenuItems = new ObservableCollection<MenuItem> {};
-            //{
-            //    this.MenuItems[3],
-            //    this.MenuItems[5]
-            //};
         }
 
         public ICommand AddMenuItemCommand { get; private set; }
         public ICommand SubmitOrderCommand { get; private set; }
         private readonly IMessageService _messageService;
 
-        private void AddMenuItem(object parameter)
+        private void AddMenuItem()
         {
             if (SelectedMenuItem != null)
             {
-                CurrentlySelectedMenuItems.Add(SelectedMenuItem);
+                this.CurrentlySelectedMenuItems.Add(this.SelectedMenuItem);
             }
         }
 
-        private void SubmitOrder(object parameter)
+        private void SubmitOrder()
         {
             if (this.CurrentlySelectedMenuItems != null)
             {
@@ -53,12 +48,11 @@ namespace RestaurantManager.ViewModels
                 var order = new Order
                 {
                     Complete = false,
-                    Expedite = true,
-                    SpecialRequests = "",
                     Table = base.Repository.Tables.Last(),
                     Items = menuItems
                 };
                 base.Repository.Orders.Add(order);
+                this.CurrentlySelectedMenuItems.Clear();
                 //_messageService.ShowDialog("The order has been submitted");
             }
         }
@@ -76,11 +70,15 @@ namespace RestaurantManager.ViewModels
         public MenuItem SelectedMenuItem
         {
             get { return _selectedMenuItem; }
-            set { _selectedMenuItem = value; }
+            set
+            {
+                _selectedMenuItem = value;
+                NotifyPropertyChanged();
+            }
         }
 
         public ObservableCollection<MenuItem> CurrentlySelectedMenuItems
-        { get; set; }
+        { get; private set; }
 
     }
 
